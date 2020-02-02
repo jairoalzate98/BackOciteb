@@ -7,6 +7,7 @@ const typeDef = gql`
         InvestmentList: [Investment]
         Investment4List: [Investment4]
         Investment5List: [Investment5]
+        Investment6List: [Investment6]
     }
 
     type Investment {
@@ -92,6 +93,26 @@ const typeDef = gql`
         Centrocosto: String
         Anio: Int
         FACULTAD: String
+        TABLA: String
+    }
+    
+    type Formation1 {
+        Entidad: String
+        Nombre: String
+        Grupo: String
+        CodigoCOL: String
+        SGI: Int
+        Centro: String
+        Facultad: String
+        Programa: String
+        Anio: Int
+        Correo: String
+        Tutor: String 
+        Observaciones: String
+        Celular: String
+        Categoria693_2014: String
+        Categoria737_2015: String
+        Categoria781_2017: String
         TABLA: String
     }
 `
