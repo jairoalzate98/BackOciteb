@@ -11,6 +11,7 @@ const typeDef = gql`
         Formation1List: [Formation1]
         Formation2List: [Formation2]
         Formation3List: [Formation3]
+        Capacity1List: [Capacity1]
     }
 
     type Investment {
@@ -142,6 +143,18 @@ const typeDef = gql`
     type Formation3 {
         ANIO: Int
         NoEstsemilleros: Int
+        FACULTAD: String
+        TABLA: String
+    }
+
+    type Capacity1 {
+        ANIO: Int
+        A1: String
+        A: String
+        B: String
+        C: String
+        D: String
+        R: String
         FACULTAD: String
         TABLA: String
     }
