@@ -14,6 +14,7 @@ const typeDef = gql`
         Capacity1List: [Capacity1]
         Capacity2List: [Capacity2]
         Capacity2_1List: [Capacity2_1]
+        BibliographicProduction3: [BibliographicProduction3]
     }
 
     type Investment {
@@ -194,7 +195,18 @@ const typeDef = gql`
         TABLA: String
     }
     
-    
+    type  BibliographicProduction3 {   
+        ID: Int
+        NOMBRELIBRO: String
+        AUTORES: String
+        RESENIA: String
+        ISBN: String
+        FACULTAD: String
+        FACULTAD2: String
+        COLECCION: String
+        ANIOPUBLICACION: Int
+        TABLA: String
+    }    
 `
 
 const schema = new ApolloServer({
