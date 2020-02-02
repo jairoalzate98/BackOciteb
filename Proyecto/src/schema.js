@@ -10,6 +10,7 @@ const typeDef = gql`
         Investment6List: [Investment6]
         Formation1List: [Formation1]
         Formation2List: [Formation2]
+        Formation3List: [Formation3]
     }
 
     type Investment {
@@ -153,7 +154,7 @@ const schema = new ApolloServer({
     playground: {
         endpoint: '/graphql',
         settings: {
-            "editor.theme": "light"
+            "editor.theme": "dark"
         }
     }
 })
