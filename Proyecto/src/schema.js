@@ -12,6 +12,7 @@ const typeDef = gql`
         Formation2List: [Formation2]
         Formation3List: [Formation3]
         Capacity1List: [Capacity1]
+        Capacity2List: [Capacity2]
     }
 
     type Investment {
@@ -158,6 +159,24 @@ const typeDef = gql`
         FACULTAD: String
         TABLA: String
     }
+
+    type Capacity2 {
+        Identificacion: Int
+        Nombres: String
+        Facultad: String
+        ProgramaAcademico: String
+        Vinculacion: String
+        Vinculacion2: String
+        NivelEstudios: String
+        Anio: Int
+        PeriodoAcademico: Int
+        Genero: String
+        Edad: Int
+        TipoInvestigadorColciencias781_2017: String
+        TABLA: String
+    }
+
+    
 `
 
 const schema = new ApolloServer({
