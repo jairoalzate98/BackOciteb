@@ -8,6 +8,8 @@ const typeDef = gql`
         Investment4List: [Investment4]
         Investment5List: [Investment5]
         Investment6List: [Investment6]
+        Formation1List: [Formation1]
+        Formation2List: [Formation2]
     }
 
     type Investment {
@@ -113,6 +115,26 @@ const typeDef = gql`
         Categoria693_2014: String
         Categoria737_2015: String
         Categoria781_2017: String
+        TABLA: String
+    }
+
+    type Formation2 {
+        Convocatoria: String
+        ANIOEJECUCION: Int
+        Entidadpostulante: String
+        DepartamentoEntidadpostulante: String
+        ProgramaCTIGrupo: String
+        Centro: String
+        NombreGrupo: String
+        SGI: Int
+        CodColciencias: String
+        Facultad: String
+        Programa: String 
+        AreaOCDE: String
+        TipodeDocumentoIdentificaciondeljoven: String
+        DocumentoIdentificaciondeljoven: Int
+        Nombredeljoven: String
+        correo: String
         TABLA: String
     }
 `
