@@ -13,6 +13,7 @@ const typeDef = gql`
         Formation3List: [Formation3]
         Capacity1List: [Capacity1]
         Capacity2List: [Capacity2]
+        Capacity2_1List: [Capacity2_1]
     }
 
     type Investment {
@@ -176,6 +177,23 @@ const typeDef = gql`
         TABLA: String
     }
 
+    type Capacity2_1 {
+        Identificacion: Int
+        Nombres: String
+        Facultad: String
+        ProgramaAcademico: String
+        Vinculacion: String
+        Vinculacion2: String
+        NivelEstudios: String
+        Anio: Int
+        PeriodoAcademico: Int
+        Genero: String
+        Edad: Int
+        TipoInvestigadorColciencias781_017: String
+        Columna1: String
+        TABLA: String
+    }
+    
     
 `
 
