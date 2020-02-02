@@ -137,6 +137,13 @@ const typeDef = gql`
         correo: String
         TABLA: String
     }
+
+    type Formation3 {
+        ANIO: Int
+        NoEstsemilleros: Int
+        FACULTAD: String
+        TABLA: String
+    }
 `
 
 const schema = new ApolloServer({
