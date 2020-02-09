@@ -1,38 +1,40 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const InvestmentSchema = new Schema({
-    CODIGOPROYECTO: {type: Number, default: 0},
+    CODIGOPROYECTO: Number,
     PROYECTO: String,
-    FECHAINICIO: Date,
+    FECHAINICIO: String,
     ESTADOPROYECTO: String,
-    FECHAESTADO: Date,
-    FECHAEJECUCION: Date,
-    ANIOEJECUCION: {type: Number, default: 2019},
+    FECHAESTADO: String,
+    FECHAEJECUCION: String,
+    ANIOEJECUCION: Number,
     TIPOFINANCIACION: String,
     FACULTAD: String,
     PROGRAMA: String,
     AREACONOCIMIENTO: String,
     CONVOCATORIA: String,
-    CODIGOCENTRO: {type: Number, default: 0},
+    CODIGOCENTRO: Number,
     CENTRO: String,
-    CODIGOGRUPO: {type: Number, default: 0},
+    CODIGOGRUPO: Number,
     GRUPO: String,
     AREAOCDE: String,
     SIGLA: String,
     NOMBRES: String,
-    IDENTIFICACION: {type: Number, default: 0},
+    IDENTIFICACION: Number,
     TIPO: String,
     TIPOINVESTIGADOR: String,
-    MONTOESPECIEINTERNO: {type: Number, default: 0},
-    MONTOEFECTIVOINTERNO: {type: Number, default: 0},
-    MONTOEXTERNO1: {type: Number, default: 0},
-    ENTIDADEXTERNA1: {type: String, default: ""},
-    TIPODEENTIDAD: {type: String, default: ""},
-    MONTOEXTERNO2: {type: Number, default: 0},
-    ENTIDADEXTERNA2: {type: String, default: ""},
-    NOTAS: {type: String, default: ""},
-    COMPROMISO: {type: String, default: ""},
+    MONTOESPECIEINTERNO: Number,
+    MONTOEFECTIVOINTERNO: Number,
+    MONTOEXTERNO1: Number,
+    ENTIDADEXTERNA1: String,
+    TIPODEENTIDAD: String,
+    MONTOEXTERNO2: String,
+    ENTIDADEXTERNA2: String,
+    NOTAS: String,
+    COMPROMISO: String,
     TABLA: String
+}, {
+    collection: 'investment'
 });
 
-export default InvestmentSchema;
+export default model('investement', InvestmentSchema)

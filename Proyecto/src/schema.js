@@ -45,7 +45,7 @@ const typeDef = gql`
         MONTOEXTERNO1: Int
         ENTIDADEXTERNA1: String
         TIPODEENTIDAD: String
-        MONTOEXTERNO2: Int
+        MONTOEXTERNO2: String
         ENTIDADEXTERNA2: String
         NOTAS: String
         COMPROMISO: String
@@ -206,7 +206,46 @@ const typeDef = gql`
         COLECCION: String
         ANIOPUBLICACION: Int
         TABLA: String
-    }    
+    }  
+
+    type Mutation {
+        createInvestment(investmentInfo: InvestmentInput): Investment
+    }
+
+    input InvestmentInput {
+        CODIGOPROYECTO: Int
+        PROYECTO: String
+        FECHAINICIO: String
+        ESTADOPROYECTO: String
+        FECHAESTADO: String
+        FECHAEJECUCION: String
+        ANIOEJECUCION: Int
+        TIPOFINANCIACION: String
+        FACULTAD: String
+        PROGRAMA: String
+        AREACONOCIMIENTO: String
+        CONVOCATORIA: String
+        CODIGOCENTRO: Int
+        CENTRO: String
+        CODIGOGRUPO: Int
+        GRUPO: String
+        AREAOCDE: String
+        SIGLA: String
+        NOMBRES: String
+        IDENTIFICACION: Int
+        TIPO: String
+        TIPOINVESTIGADOR: String
+        MONTOESPECIEINTERNO: Int
+        MONTOEFECTIVOINTERNO: Int
+        MONTOEXTERNO1: Int
+        ENTIDADEXTERNA1: String
+        TIPODEENTIDAD: String
+        MONTOEXTERNO2: String
+        ENTIDADEXTERNA2: String
+        NOTAS: String
+        COMPROMISO: String
+        TABLA: String
+    }
 `
 
 const schema = new ApolloServer({
