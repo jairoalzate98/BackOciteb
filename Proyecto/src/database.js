@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 export async function connect () {
     try {
-        await mongoose.connect('mongodb://localhost:27017/ociteb', {
+        await mongoose.connect('mongodb+srv://jairo-alzate98:jairo980616@cluster0-7136w.gcp.mongodb.net/test?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
