@@ -16,4 +16,4 @@ const Investment5Schema = new Schema({
     collection: 'investment5'
 });
 
-export default model('investement5', Investment5Schema)
+export default model('investment5', Investment5Schema)
