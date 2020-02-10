@@ -60,7 +60,7 @@ const typeDef = gql`
         SJRoJCR: String
         Nombredeproducto: String
         Fuente: String
-        NoSalarios: Int
+        NoSalarios: String
         Valor: Int
         GrupLAC: String
         Observaciones: String
@@ -221,7 +221,7 @@ const typeDef = gql`
         SJRoJCR: String
         Nombredeproducto: String
         Fuente: String
-        NoSalarios: Int
+        NoSalarios: String
         Valor: Int
         GrupLAC: String
         Observaciones: String
