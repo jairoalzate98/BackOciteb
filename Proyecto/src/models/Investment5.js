@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const Investment5Schema = new Schema({
     Fecha: String,
@@ -12,6 +12,8 @@ const Investment5Schema = new Schema({
     Banco: String,
     Nocuenta: String,
     TABLA: String
+}, {
+    collection: 'investment5'
 });
 
-export default Investment5Schema;
+export default model('investement5', Investment5Schema)

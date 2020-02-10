@@ -211,6 +211,21 @@ const typeDef = gql`
     type Mutation {
         createInvestment(investmentInfo: [InvestmentInput]): [Investment]
         createInvestment4(investment4Info: [Investment4Input]): [Investment4]
+        createInvestment5(investment5Info: [Investment5Input]): [Investment5]
+    }
+
+    input Investment5Input {
+        Fecha: String
+        Centro: String
+        Facultad: String
+        Liquidacion: String
+        Valorrecaudo: Int
+        Documento: String
+        Vigenciadocumento: Int
+        Nodocumento: Int
+        Banco: String
+        Nocuenta: String
+        TABLA: String
     }
 
     input Investment4Input {
