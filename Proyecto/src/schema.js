@@ -45,7 +45,7 @@ const typeDef = gql`
         MONTOEXTERNO1: Int
         ENTIDADEXTERNA1: String
         TIPODEENTIDAD: String
-        MONTOEXTERNO2: String
+        MONTOEXTERNO2: Int
         ENTIDADEXTERNA2: String
         NOTAS: String
         COMPROMISO: String
@@ -209,7 +209,28 @@ const typeDef = gql`
     }  
 
     type Mutation {
-        createInvestment(investmentInfo: InvestmentInput): Investment
+        createInvestment(investmentInfo: [InvestmentInput]): [Investment]
+        createInvestment4(investment4Info: [Investment4Input]): [Investment4]
+    }
+
+    input Investment4Input {
+        Facultad: String
+        Grupo: String
+        Noproductos: Int
+        Publindex: String
+        SJRoJCR: String
+        Nombredeproducto: String
+        Fuente: String
+        NoSalarios: Int
+        Valor: Int
+        GrupLAC: String
+        Observaciones: String
+        Distribucion: String
+        SMMLV: String
+        Nodeproductosporfacultad: Int
+        Noproductosporgrupo: Int
+        Tipodeproducto: String
+        TABLA: String
     }
 
     input InvestmentInput {
@@ -240,7 +261,7 @@ const typeDef = gql`
         MONTOEXTERNO1: Int
         ENTIDADEXTERNA1: String
         TIPODEENTIDAD: String
-        MONTOEXTERNO2: String
+        MONTOEXTERNO2: Int
         ENTIDADEXTERNA2: String
         NOTAS: String
         COMPROMISO: String

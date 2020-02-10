@@ -28,7 +28,7 @@ const InvestmentSchema = new Schema({
     MONTOEXTERNO1: Number,
     ENTIDADEXTERNA1: String,
     TIPODEENTIDAD: String,
-    MONTOEXTERNO2: String,
+    MONTOEXTERNO2: Number,
     ENTIDADEXTERNA2: String,
     NOTAS: String,
     COMPROMISO: String,
