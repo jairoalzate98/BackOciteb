@@ -212,6 +212,7 @@ const typeDef = gql`
         createInvestment(investmentInfo: [InvestmentInput]): [Investment]
         createInvestment4(investment4Info: [Investment4Input]): [Investment4]
         createInvestment5(investment5Info: [Investment5Input]): [Investment5]
+        createInvestment6(investment6Info: [Investment6Input]): [Investment6]
     }
 
     input Investment5Input {
@@ -225,6 +226,23 @@ const typeDef = gql`
         Nodocumento: Int
         Banco: String
         Nocuenta: String
+        TABLA: String
+    }
+
+    input Investment6Input {
+        ID: Int
+        Estado: String
+        Numero: Int
+        Fecha: String
+        Valor: Int
+        Tipo: String
+        Objeto: String
+        Unidad: String
+        Identificacion: Int
+        Tercero: String
+        Centrocosto: String
+        Anio: Int
+        FACULTAD: String
         TABLA: String
     }
 

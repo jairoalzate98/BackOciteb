@@ -1,20 +1,22 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const Investment6Schema = new Schema({
     ID: Number,
     Estado: String,
-    Numero: {type: Number, default: 0},
+    Numero: Number,
     Fecha: String,
     Valor: Number,
     Tipo: String,
     Objeto: String,
     Unidad: String,
-    Identificacion: {type: Number, default: 0},
+    Identificacion:Number,
     Tercero: String,
     Centrocosto: String, 
     Anio: Number,
     FACULTAD: String,
     TABLA: String
+}, {
+    collection: 'investment6'
 });
 
-export default Investment6Schema;
+export default model('investment6', Investment6Schema)
