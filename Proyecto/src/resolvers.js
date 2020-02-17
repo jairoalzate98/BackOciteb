@@ -5,6 +5,8 @@ import Investement6 from './models/Investement6';
 import Formation1 from './models/Formation1';
 import Formation2 from './models/Formation2';
 import Formation3 from './models/Formation3';
+import Capacity1 from './models/Capacity1';
+import Capacity2 from './models/Capacity2';
 
 export const resolvers = {
     Query: {
@@ -70,6 +72,24 @@ export const resolvers = {
             var a = JSON.parse(obj);
             for (var i in a) {
                 const newInvestment = new Formation3(a[i])
+                await newInvestment.save()
+            }
+            return 'Hola';
+        },
+        async createCapacity1(_, { capacity1Info }) {
+            var obj = JSON.stringify(capacity1Info);
+            var a = JSON.parse(obj);
+            for (var i in a) {
+                const newInvestment = new Capacity1(a[i])
+                await newInvestment.save()
+            }
+            return 'Hola';
+        },
+        async createCapacity2(_, { capacity2Info }) {
+            var obj = JSON.stringify(capacity2Info);
+            var a = JSON.parse(obj);
+            for (var i in a) {
+                const newInvestment = new Capacity2(a[i])
                 await newInvestment.save()
             }
             return 'Hola';

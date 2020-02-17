@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const Capacity1Schema = new Schema({
     ANIO: Number,
@@ -10,6 +10,8 @@ const Capacity1Schema = new Schema({
     R: String,
     FACULTAD: String,
     TABLA: String
+}, {
+    collection: 'capacity1'
 });
 
-export default Capacity1Schema;
+export default model('capacity1', Capacity1Schema)

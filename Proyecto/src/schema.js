@@ -216,6 +216,36 @@ const typeDef = gql`
         createFormation1(formation1Info: [Formation1Input]): [Formation1]
         createFormation2(formation2Info: [Formation2Input]): [Formation2]
         createFormation3(formation3Info: [Formation3Input]): [Formation3]
+        createCapacity1(capacity1Info: [Capacity1Input]): [Capacity1]
+        createCapacity2(capacity2Info: [Capacity2Input]): [Capacity2]
+    }
+
+    input Capacity2Input {
+        Identificacion: Int
+        Nombres: String
+        Facultad: String
+        ProgramaAcademico: String
+        Vinculacion: String
+        Vinculacion2: String
+        NivelEstudios: String
+        Anio: Int
+        PeriodoAcademico: Int
+        Genero: String
+        Edad: Int
+        TipoInvestigadorColciencias781_2017: String
+        TABLA: String
+    }
+
+    input Capacity1Input {
+        ANIO: Int
+        A1: String
+        A: String
+        B: String
+        C: String
+        D: String
+        R: String
+        FACULTAD: String
+        TABLA: String
     }
 
     input Formation3Input {

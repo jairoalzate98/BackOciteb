@@ -5,6 +5,8 @@ const Formation3Schema = new Schema({
     NoEstsemilleros: Number,
     FACULTAD: String,
     TABLA: String
+}, {
+    collection: 'formation3'
 });
 
 export default model('formation3', Formation3Schema)
