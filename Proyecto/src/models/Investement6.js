@@ -11,7 +11,7 @@ const Investment6Schema = new Schema({
     Unidad: String,
     Identificacion:Number,
     Tercero: String,
-    Centrocosto: String, 
+    CentroCosto: String, 
     Anio: Number,
     FACULTAD: String,
     TABLA: String

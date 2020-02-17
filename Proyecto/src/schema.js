@@ -91,13 +91,13 @@ const typeDef = gql`
         Estado: String
         Numero: Int
         Fecha: String
-        Valor: Int
+        Valor: Float
         Tipo: String
         Objeto: String
         Unidad: String
-        Identificacion: Int
+        Identificacion: Float
         Tercero: String
-        Centrocosto: String
+        CentroCosto: String
         Anio: Int
         FACULTAD: String
         TABLA: String
@@ -213,6 +213,27 @@ const typeDef = gql`
         createInvestment4(investment4Info: [Investment4Input]): [Investment4]
         createInvestment5(investment5Info: [Investment5Input]): [Investment5]
         createInvestment6(investment6Info: [Investment6Input]): [Investment6]
+        createFormation1(formation1Info: [Formation1Input]): [Formation1]
+    }
+
+    input Formation1Input {
+        Entidad: String
+        Nombre: String
+        Grupo: String
+        CodigoCOL: String
+        SGI: Int
+        Centro: String
+        Facultad: String
+        Programa: String
+        Anio: Int
+        Correo: String
+        Tutor: String 
+        Observaciones: String
+        Celular: String
+        Categoria693_2014: String
+        Categoria737_2015: String
+        Categoria781_2017: String
+        TABLA: String
     }
 
     input Investment5Input {
@@ -234,13 +255,13 @@ const typeDef = gql`
         Estado: String
         Numero: Int
         Fecha: String
-        Valor: Int
+        Valor: Float
         Tipo: String
         Objeto: String
         Unidad: String
-        Identificacion: Int
+        Identificacion: Float
         Tercero: String
-        Centrocosto: String
+        CentroCosto: String
         Anio: Int
         FACULTAD: String
         TABLA: String

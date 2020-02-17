@@ -2,6 +2,7 @@ import Investement from './models/Investement';
 import Investement4 from './models/Investment4';
 import Investement5 from './models/Investment5';
 import Investement6 from './models/Investement6';
+import Formation1 from './models/Formation1';
 
 export const resolvers = {
     Query: {
@@ -40,6 +41,15 @@ export const resolvers = {
             var a = JSON.parse(obj);
             for (var i in a) {
                 const newInvestment = new Investement6(a[i])
+                await newInvestment.save()
+            }
+            return 'Hola';
+        },
+        async createFormation1(_, { formation1Info }) {
+            var obj = JSON.stringify(formation1Info);
+            var a = JSON.parse(obj);
+            for (var i in a) {
+                const newInvestment = new Formation1(a[i])
                 await newInvestment.save()
             }
             return 'Hola';
