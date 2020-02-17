@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const Formation3Schema = new Schema({
     ANIO: Number,
@@ -7,4 +7,4 @@ const Formation3Schema = new Schema({
     TABLA: String
 });
 
-export default Formation3Schema;
+export default model('formation3', Formation3Schema)

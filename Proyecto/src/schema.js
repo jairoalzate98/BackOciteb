@@ -214,6 +214,35 @@ const typeDef = gql`
         createInvestment5(investment5Info: [Investment5Input]): [Investment5]
         createInvestment6(investment6Info: [Investment6Input]): [Investment6]
         createFormation1(formation1Info: [Formation1Input]): [Formation1]
+        createFormation2(formation2Info: [Formation2Input]): [Formation2]
+        createFormation3(formation3Info: [Formation3Input]): [Formation3]
+    }
+
+    input Formation3Input {
+        ANIO: Int
+        NoEstsemilleros: Int
+        FACULTAD: String
+        TABLA: String
+    }
+
+    input Formation2Input {
+        Convocatoria: String
+        ANIOEJECUCION: Int
+        Entidadpostulante: String
+        DepartamentoEntidadpostulante: String
+        ProgramaCTIGrupo: String
+        Centro: String
+        NombreGrupo: String
+        SGI: Int
+        CodColciencias: String
+        Facultad: String
+        Programa: String 
+        AreaOCDE: String
+        TipodeDocumentoIdentificaciondeljoven: String
+        DocumentoIdentificaciondeljoven: Int
+        Nombredeljoven: String
+        correo: String
+        TABLA: String
     }
 
     input Formation1Input {

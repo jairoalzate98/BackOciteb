@@ -3,6 +3,8 @@ import Investement4 from './models/Investment4';
 import Investement5 from './models/Investment5';
 import Investement6 from './models/Investement6';
 import Formation1 from './models/Formation1';
+import Formation2 from './models/Formation2';
+import Formation3 from './models/Formation3';
 
 export const resolvers = {
     Query: {
@@ -50,6 +52,24 @@ export const resolvers = {
             var a = JSON.parse(obj);
             for (var i in a) {
                 const newInvestment = new Formation1(a[i])
+                await newInvestment.save()
+            }
+            return 'Hola';
+        },
+        async createFormation2(_, { formation2Info }) {
+            var obj = JSON.stringify(formation2Info);
+            var a = JSON.parse(obj);
+            for (var i in a) {
+                const newInvestment = new Formation2(a[i])
+                await newInvestment.save()
+            }
+            return 'Hola';
+        },
+        async createFormation3(_, { formation3Info }) {
+            var obj = JSON.stringify(formation3Info);
+            var a = JSON.parse(obj);
+            for (var i in a) {
+                const newInvestment = new Formation3(a[i])
                 await newInvestment.save()
             }
             return 'Hola';

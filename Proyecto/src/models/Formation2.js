@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const Formation2Schema = new Schema({
     Convocatoria: String,
@@ -18,6 +18,8 @@ const Formation2Schema = new Schema({
     Nombredeljoven: String,
     correo: String,
     TABLA: String
+}, {
+    collection: 'formation2'
 });
 
-export default Formation2Schema;
+export default model('formation2', Formation2Schema)
