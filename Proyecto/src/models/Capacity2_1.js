@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const Capacity2_1Schema = new Schema({
     Identificacion: Number,
@@ -15,6 +15,8 @@ const Capacity2_1Schema = new Schema({
     TipoInvestigadorColciencias781_017: String,
     Columna1: String,
     TABLA: String
+}, {
+    collection: 'capacity2_1'
 });
 
-export default Capacity2_1Schema;
+export default model('capacity2_1', Capacity2_1Schema)

@@ -7,6 +7,7 @@ import Formation2 from './models/Formation2';
 import Formation3 from './models/Formation3';
 import Capacity1 from './models/Capacity1';
 import Capacity2 from './models/Capacity2';
+import Capacity2_1 from './models/Capacity2_1';
 
 export const resolvers = {
     Query: {
@@ -90,6 +91,15 @@ export const resolvers = {
             var a = JSON.parse(obj);
             for (var i in a) {
                 const newInvestment = new Capacity2(a[i])
+                await newInvestment.save()
+            }
+            return 'Hola';
+        },
+        async createCapacity2_1(_, { capacity2_1Info }) {
+            var obj = JSON.stringify(capacity2_1Info);
+            var a = JSON.parse(obj);
+            for (var i in a) {
+                const newInvestment = new Capacity2_1(a[i])
                 await newInvestment.save()
             }
             return 'Hola';
