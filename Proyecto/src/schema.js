@@ -219,6 +219,20 @@ const typeDef = gql`
         createCapacity1(capacity1Info: [Capacity1Input]): [Capacity1]
         createCapacity2(capacity2Info: [Capacity2Input]): [Capacity2]
         createCapacity2_1(capacity2_1Info: [Capacity2_1Input]): [Capacity2_1]
+        createBP3(BibliographicProduction3Info: [BibliographicProduction3Input]): [BibliographicProduction3]
+    }
+    
+    input  BibliographicProduction3Input {   
+        ID: Int
+        NOMBRELIBRO: String
+        AUTORES: String
+        RESENIA: String
+        ISBN: String
+        FACULTAD: String
+        FACULTAD2: String
+        COLECCION: String
+        ANIOPUBLICACION: Int
+        TABLA: String
     }
 
     input Capacity2_1Input {

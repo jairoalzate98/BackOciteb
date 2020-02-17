@@ -8,6 +8,7 @@ import Formation3 from './models/Formation3';
 import Capacity1 from './models/Capacity1';
 import Capacity2 from './models/Capacity2';
 import Capacity2_1 from './models/Capacity2_1';
+import BP3 from './models/BibliographicProduction3';
 
 export const resolvers = {
     Query: {
@@ -100,6 +101,15 @@ export const resolvers = {
             var a = JSON.parse(obj);
             for (var i in a) {
                 const newInvestment = new Capacity2_1(a[i])
+                await newInvestment.save()
+            }
+            return 'Hola';
+        },
+        async createBP3(_, { BibliographicProduction3Info }) {
+            var obj = JSON.stringify(BibliographicProduction3Info);
+            var a = JSON.parse(obj);
+            for (var i in a) {
+                const newInvestment = new BP3(a[i])
                 await newInvestment.save()
             }
             return 'Hola';

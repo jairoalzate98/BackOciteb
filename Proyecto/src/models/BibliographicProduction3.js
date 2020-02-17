@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const BP3Schema = new Schema({
     ID: Number,
@@ -11,6 +11,8 @@ const BP3Schema = new Schema({
     COLECCION: String,
     ANIOPUBLICACION: Number, 
     TABLA: String
+}, {
+    collection: 'BP3'
 });
 
-export default BP3Schema;
+export default model('BP3', BP3Schema)
