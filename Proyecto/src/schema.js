@@ -18,38 +18,9 @@ const typeDef = gql`
     }
 
     type Investment {
-        CODIGOPROYECTO: Int
-        PROYECTO: String
-        FECHAINICIO: String
-        ESTADOPROYECTO: String
-        FECHAESTADO: String
-        FECHAEJECUCION: String
-        ANIOEJECUCION: Int
-        TIPOFINANCIACION: String
-        FACULTAD: String
-        PROGRAMA: String
-        AREACONOCIMIENTO: String
-        CONVOCATORIA: String
-        CODIGOCENTRO: Int
-        CENTRO: String
-        CODIGOGRUPO: Int
-        GRUPO: String
-        AREAOCDE: String
-        SIGLA: String
-        NOMBRES: String
-        IDENTIFICACION: Int
-        TIPO: String
-        TIPOINVESTIGADOR: String
-        MONTOESPECIEINTERNO: Int
-        MONTOEFECTIVOINTERNO: Int
-        MONTOEXTERNO1: Int
-        ENTIDADEXTERNA1: String
-        TIPODEENTIDAD: String
-        MONTOEXTERNO2: Int
-        ENTIDADEXTERNA2: String
-        NOTAS: String
-        COMPROMISO: String
-        TABLA: String
+        tipo: String
+        anio: Int
+        total: Int
     }
 
     type Investment4 {

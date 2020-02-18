@@ -12,7 +12,25 @@ import BP3 from './models/BibliographicProduction3';
 
 export const resolvers = {
     Query: {
-        
+        async investmentList(){
+            return await Investement.aggregate([
+                {$match: { 
+                    FACULTAD: "CIENCIAS" 
+                }
+                },
+                {$group: { _id: {
+                    TIPOFINANCIACION: "$TIPOFINANCIACION",
+                    ANIOEJECUCION: "$ANIOEJECUCION"
+                }, total: { 
+                    $sum: 1 
+                }}},
+                {$project: { 
+                    tipo : '$_id.TIPOFINANCIACION', 
+                    anio: '$_id.ANIOEJECUCION',
+                    total: '$total'}
+                }
+            ])
+        }
     },
     Mutation: {
         async createInvestment(_, { investmentInfo }) {

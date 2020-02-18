@@ -10,6 +10,10 @@ app.use(bodyParser.json({limit: '50mb', extended: true}));
 app.use(cors())
 connect()
 
+app.get('/', function(err, res) {
+    res.send('Hola');
+});
+
 schema.applyMiddleware({
     app
 })
