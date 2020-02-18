@@ -6,7 +6,7 @@ const typeDef = gql`
     type Query {
         investmentList(faculty: String): [Investment]
         Investment4List(faculty: String): [Investment4]
-        Investment5List: [Investment5]
+        Investment5List(faculty: String): [Investment5]
         Investment6List: [Investment6]
         Formation1List: [Formation1]
         Formation2List: [Formation2]
@@ -30,17 +30,8 @@ const typeDef = gql`
     }
 
     type Investment5 {
-        Fecha: String
-        Centro: String
-        Facultad: String
-        Liquidacion: String
-        Valorrecaudo: Int
-        Documento: String
-        Vigenciadocumento: Int
-        Nodocumento: Int
-        Banco: String
-        Nocuenta: String
-        TABLA: String
+        Anio: Int
+        total: Float
     }
 
     type Investment6 {

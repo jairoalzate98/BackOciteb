@@ -51,6 +51,24 @@ export const resolvers = {
                     total: '$total'}
                 }
             ])
+        },
+        async Investment5List(_, {faculty}){
+            return await Investement5.aggregate([
+                {$match: { 
+                    Facultad: faculty
+                }
+                },
+                {$group: { _id: {
+                    Anio: "$Vigenciadocumento"
+                }, total: { 
+                    $sum: '$Valorrecaudo' 
+                }
+                }},
+                {$project: { 
+                    Anio: '$_id.Anio',
+                    total: '$total'}
+                }
+            ])
         }
     },
     Mutation: {
