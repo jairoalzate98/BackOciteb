@@ -69,6 +69,24 @@ export const resolvers = {
                     total: '$total'}
                 }
             ])
+        },
+        async Investment6List(_, {faculty}){
+            return await Investement6.aggregate([
+                {$match: { 
+                    FACULTAD: faculty
+                }
+                },
+                {$group: { _id: {
+                    Anio: "$Anio"
+                }, total: { 
+                    $sum: '$Valor' 
+                }
+                }},
+                {$project: { 
+                    Anio: '$_id.Anio',
+                    total: '$total'}
+                }
+            ])
         }
     },
     Mutation: {

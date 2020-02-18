@@ -7,7 +7,7 @@ const typeDef = gql`
         investmentList(faculty: String): [Investment]
         Investment4List(faculty: String): [Investment4]
         Investment5List(faculty: String): [Investment5]
-        Investment6List: [Investment6]
+        Investment6List(faculty: String): [Investment6]
         Formation1List: [Formation1]
         Formation2List: [Formation2]
         Formation3List: [Formation3]
@@ -35,20 +35,8 @@ const typeDef = gql`
     }
 
     type Investment6 {
-        ID: Int
-        Estado: String
-        Numero: Int
-        Fecha: String
-        Valor: Float
-        Tipo: String
-        Objeto: String
-        Unidad: String
-        Identificacion: Float
-        Tercero: String
-        CentroCosto: String
         Anio: Int
-        FACULTAD: String
-        TABLA: String
+        total: Float
     }
     
     type Formation1 {
