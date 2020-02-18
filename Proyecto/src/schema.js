@@ -4,7 +4,7 @@ import { ApolloServer, gql } from 'apollo-server-express'
 const typeDef = gql`
 
     type Query {
-        InvestmentList: [Investment]
+        investmentList: [Investment]
         Investment4List: [Investment4]
         Investment5List: [Investment5]
         Investment6List: [Investment6]
@@ -127,7 +127,7 @@ const typeDef = gql`
         Convocatoria: String
         ANIOEJECUCION: Int
         Entidadpostulante: String
-        DepartamentoEntidadpostulante: String
+        Departamento: String
         ProgramaCTIGrupo: String
         Centro: String
         NombreGrupo: String
@@ -291,7 +291,7 @@ const typeDef = gql`
         Convocatoria: String
         ANIOEJECUCION: Int
         Entidadpostulante: String
-        DepartamentoEntidadpostulante: String
+        Departamento: String
         ProgramaCTIGrupo: String
         Centro: String
         NombreGrupo: String

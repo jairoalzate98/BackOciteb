@@ -4,7 +4,7 @@ const Formation2Schema = new Schema({
     Convocatoria: String,
     ANIOEJECUCION: Number,
     Entidadpostulante: String,
-    DepartamentoEntidadpostulante: String,
+    Departamento: String,
     ProgramaCTIGrupo: String,
     Centro: String,
     NombreGrupo: String,
