@@ -30,6 +30,27 @@ export const resolvers = {
                     total: '$total'}
                 }
             ])
+        },
+        async Investment4List(_, {faculty}){
+            return await Investement4.aggregate([
+                {$match: { 
+                    Facultad: faculty
+                }
+                },
+                {$group: { _id: {
+                    Grupo: "$Grupo"
+                }, total: { 
+                    $sum: '$Valor' 
+                }, productos: {
+                    $sum: '$Noproductos'
+                }
+                }},
+                {$project: { 
+                    Grupo: '$_id.Grupo',
+                    productos: '$productos',
+                    total: '$total'}
+                }
+            ])
         }
     },
     Mutation: {
