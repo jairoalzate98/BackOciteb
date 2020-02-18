@@ -12,10 +12,10 @@ import BP3 from './models/BibliographicProduction3';
 
 export const resolvers = {
     Query: {
-        async investmentList(){
+        async investmentList(_, {faculty}){
             return await Investement.aggregate([
                 {$match: { 
-                    FACULTAD: "CIENCIAS" 
+                    FACULTAD: faculty
                 }
                 },
                 {$group: { _id: {

@@ -4,7 +4,7 @@ import { ApolloServer, gql } from 'apollo-server-express'
 const typeDef = gql`
 
     type Query {
-        investmentList: [Investment]
+        investmentList(faculty: String): [Investment]
         Investment4List: [Investment4]
         Investment5List: [Investment5]
         Investment6List: [Investment6]
