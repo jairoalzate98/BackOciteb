@@ -107,6 +107,46 @@ export const resolvers = {
                     total:  '$total'
                 }}
             ])
+        },
+        async Formation1List(_, {faculty}){
+            return await Formation1.aggregate([
+                {$match: {
+                    Facultad: faculty
+                }
+                },
+                {$group: { _id: {
+                    Anio: "$Anio",
+                    Programa: "$Programa"
+                }, total: {
+                    $sum: 1
+                }
+                }},
+                {$project: {
+                    Anio: '$_id.Anio',
+                    Programa: '$_id.Programa',
+                    total:  '$total'
+                }}
+            ])
+        },
+        async Capacity2List(_, {faculty}){
+            return await Capacity2.aggregate([
+                {$match: {
+                    Facultad: faculty
+                }
+                },
+                {$group: { _id: {
+                    Anio: "$Anio",
+                    Tipo: "$TipoInvestigadorColciencias781_2017"
+                }, total: {
+                    $sum: 1
+                }
+                }},
+                {$project: {
+                    Anio: '$_id.Anio',
+                    Tipo: '$_id.Tipo',
+                    total:  '$total'
+                }}
+            ])
         }
     },
     Mutation: {
