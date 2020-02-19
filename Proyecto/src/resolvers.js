@@ -87,6 +87,26 @@ export const resolvers = {
                     total: '$total'}
                 }
             ])
+        },
+        async Formation2List(_, {faculty}){
+            return await Formation2.aggregate([
+                {$match: {
+                    Facultad: faculty
+                }
+                },
+                {$group: { _id: {
+                    Anio: "$ANIOEJECUCION",
+                    Programa: "$Programa"
+                }, total: {
+                    $sum: 1
+                }
+                }},
+                {$project: {
+                    Anio: '$_id.Anio',
+                    Programa: '$_id.Programa',
+                    total:  '$total'
+                }}
+            ])
         }
     },
     Mutation: {

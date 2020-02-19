@@ -9,7 +9,7 @@ const typeDef = gql`
         Investment5List(faculty: String): [Investment5]
         Investment6List(faculty: String): [Investment6]
         Formation1List: [Formation1]
-        Formation2List: [Formation2]
+        Formation2List(faculty: String): [Formation2]
         Formation3List: [Formation3]
         Capacity1List: [Capacity1]
         Capacity2List: [Capacity2]
@@ -60,23 +60,9 @@ const typeDef = gql`
     }
 
     type Formation2 {
-        Convocatoria: String
-        ANIOEJECUCION: Int
-        Entidadpostulante: String
-        Departamento: String
-        ProgramaCTIGrupo: String
-        Centro: String
-        NombreGrupo: String
-        SGI: Int
-        CodColciencias: String
-        Facultad: String
-        Programa: String 
-        AreaOCDE: String
-        TipodeDocumentoIdentificaciondeljoven: String
-        DocumentoIdentificaciondeljoven: Int
-        Nombredeljoven: String
-        correo: String
-        TABLA: String
+        Programa: String
+        Anio: Int
+        total: Int
     }
 
     type Formation3 {
