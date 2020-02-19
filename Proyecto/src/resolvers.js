@@ -147,6 +147,44 @@ export const resolvers = {
                     total:  '$total'
                 }}
             ])
+        },
+        async Capacity2_1List(_, {faculty}){
+            return await Capacity2_1.aggregate([
+                {$match: {
+                    Facultad: faculty
+                }
+                },
+                {$group: { _id: {
+                    Anio: "$Anio",
+                    Tipo: "$TipoInvestigadorColciencias781_2017"
+                }, total: {
+                    $sum: 1
+                }
+                }},
+                {$project: {
+                    Anio: '$_id.Anio',
+                    Tipo: '$_id.Tipo',
+                    total:  '$total'
+                }}
+            ])
+        },
+        async BibliographicProduction3(_, {faculty}){
+            return await BP3.aggregate([
+                {$match: {
+                    FACULTAD2: faculty
+                }
+                },
+                {$group: { _id: {
+                    Anio: "$ANIOPUBLICACION"
+                }, total: {
+                    $sum: 1
+                }
+                }},
+                {$project: {
+                    Anio: '$_id.Anio',
+                    total:  '$total'
+                }}
+            ])
         }
     },
     Mutation: {
