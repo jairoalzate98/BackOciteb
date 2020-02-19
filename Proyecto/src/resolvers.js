@@ -156,7 +156,7 @@ export const resolvers = {
                 },
                 {$group: { _id: {
                     Anio: "$Anio",
-                    Tipo: "$TipoInvestigadorColciencias781_2017"
+                    Tipo: "$TipoInvestigadorColciencias781_017"
                 }, total: {
                     $sum: 1
                 }
