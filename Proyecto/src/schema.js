@@ -15,6 +15,12 @@ const typeDef = gql`
         Capacity2List(faculty: String): [Capacity2]
         Capacity2_1List(faculty: String): [Capacity2_1]
         BibliographicProduction3(faculty: String): [BibliographicProduction3]
+        SchoolList(faculty: String): [School]
+    }
+
+    type School {
+        tipo: String
+        total: Int
     }
 
     type Investment {

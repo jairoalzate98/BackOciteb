@@ -10,8 +10,23 @@ import Capacity2 from './models/Capacity2';
 import Capacity2_1 from './models/Capacity2_1';
 import BP3 from './models/BibliographicProduction3';
 
+
 export const resolvers = {
-    Query: {
+    Query: { 
+        async SchoolList(_, {faculty}){
+        return await Investement.aggregate([
+            
+            {$group: { _id: {
+                tipo: "$PROGRAMA"
+            }, total: { 
+                $sum: 1 
+            }}},
+            {$project: { 
+                tipo : '$_id.tipo', 
+                total: '$total'}
+            }
+        ])
+        },
         async investmentList(_, {faculty}){
             return await Investement.aggregate([
                 {$match: { 
