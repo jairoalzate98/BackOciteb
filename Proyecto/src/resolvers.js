@@ -13,20 +13,6 @@ import BP3 from './models/BibliographicProduction3';
 
 export const resolvers = {
     Query: { 
-        async SchoolList(){
-        return await Investement.aggregate([
-            
-            {$group: { _id: {
-                tipo: "$PROGRAMA"
-            }, total: { 
-                $sum: 1 
-            }}},
-            {$project: { 
-                tipo : '$_id.tipo', 
-                total: '$total'}
-            }
-        ])
-        },
         async investmentList(_, {faculty}){
             return await Investement.aggregate([
                 {$match: { 

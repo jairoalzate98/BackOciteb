@@ -18,6 +18,8 @@ schema.applyMiddleware({
     app
 })
 
-app.listen(3000, () => {
-    console.log('Server on 3000')
-})
+
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 3000");
+});
