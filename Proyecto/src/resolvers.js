@@ -88,9 +88,10 @@ export const resolvers = {
             }
         },
         async Investment4List(_, {faculty}){
+            var fac = getFaculties2(faculty);
             return await Investement4.aggregate([
                 {$match: { 
-                    Facultad: faculty
+                    Facultad: fac
                 }
                 },
                 {$group: { _id: {
@@ -364,7 +365,7 @@ function getFaculties(faculty){
             return 'CIENCIAS ECONOMICAS Y ADMINISTRATIVAS';
         break;
         case "6":
-            return 'DERECHO Y CIENCIAS SOCIALES'
+            return 'DERECHO Y CIENCIAS SOCIALES';
         break;
         case "7":
             return 'ESTUDIOS A DISTANCIA';
@@ -380,6 +381,47 @@ function getFaculties(faculty){
         break;
         case "11":
             return 'SOGAMOSO';
+        break;
+        default:
+            console.log('Facultad no existente');
+        break;
+    }
+}
+
+function getFaculties2(faculty){
+    switch(faculty){
+        case "1":
+            return 'Ciencias';
+        break;
+        case "2":
+            return 'Agropecuarias';
+        break;
+        case "3":
+            return 'Educacion';
+        break;
+        case "4":
+            return 'CIENCIAS DE LA SALUD';
+        break;
+        case "5":
+            return 'Economicas';
+        break;
+        case "6":
+            return 'DERECHO Y CIENCIAS SOCIALES';
+        break;
+        case "7":
+            return 'FESAD';
+        break;
+        case "8":
+            return 'INGENIERIA';
+        break;
+        case "9":
+            return 'CHIQUINQUIRA';
+        break;
+        case "10":
+            return 'Duitama';
+        break;
+        case "11":
+            return 'Sogamoso';
         break;
         default:
             console.log('Facultad no existente');
