@@ -11,12 +11,14 @@ import Capacity2_1 from './models/Capacity2_1';
 import BP3 from './models/BibliographicProduction3';
 
 export const resolvers = {
+
     Query: { 
         async investmentList(_, {faculty, table}){
+            var fac = getFaculties(faculty);
             if(table == 'I01'){
                 return await  Investement.aggregate([
                     {$match: {  
-                        FACULTAD: faculty
+                        FACULTAD: fac
                     }}, 
                     {$match: {
                         TABLA: table
@@ -36,7 +38,7 @@ export const resolvers = {
             }else if(table == 'I02'){
                 return await  Investement.aggregate([
                     {$match: {  
-                        FACULTAD: faculty
+                        FACULTAD: fac
                     }}, 
                     {$match: {
                         TABLA: table
@@ -61,10 +63,12 @@ export const resolvers = {
                         }}
                     }
                 ])
+
             }else if(table == 'I03'){
+                console.log(fac, table);
                 return await  Investement.aggregate([
                     {$match: {  
-                        FACULTAD: faculty
+                        FACULTAD: fac
                     }}, 
                     {$match: {
                         TABLA: table
@@ -341,3 +345,44 @@ export const resolvers = {
         }
     }
 };
+
+function getFaculties(faculty){
+    switch(faculty){
+        case "1":
+            return 'CIENCIAS';
+        break;
+        case "2":
+            return 'CIENCIAS AGROPECUARIAS';
+        break;
+        case "3":
+            return 'CIENCIAS DE LA EDUCACION';
+        break;
+        case "4":
+            return 'CIENCIAS DE LA SALUD';
+        break;
+        case "5":
+            return 'CIENCIAS ECONOMICAS Y ADMINISTRATIVAS';
+        break;
+        case "6":
+            return 'DERECHO Y CIENCIAS SOCIALES'
+        break;
+        case "7":
+            return 'ESTUDIOS A DISTANCIA';
+        break;
+        case "8":
+            return 'INGENIERIA';
+        break;
+        case "9":
+            return 'CHIQUINQUIRA';
+        break;
+        case "10":
+            return 'DUITAMA';
+        break;
+        case "11":
+            return 'SOGAMOSO';
+        break;
+        default:
+            console.log('Facultad no existente');
+        break;
+    }
+}
