@@ -4,7 +4,7 @@ import { ApolloServer, gql } from 'apollo-server-express'
 const typeDef = gql`
 
     type Query {
-        investmentList(faculty: String): [Investment]
+        investmentList(faculty: String, table: String): [Investment]
         Investment4List(faculty: String): [Investment4]
         Investment5List(faculty: String): [Investment5]
         Investment6List(faculty: String): [Investment6]
@@ -27,6 +27,12 @@ const typeDef = gql`
         tipo: String
         anio: Int
         total: Int
+        AporteEspecie: Float
+        AporteEfectivo: Float
+        AporteExterno: Float
+        totalDinero: Float
+        tipoEntidad: String
+        totalEntidadExterna: Float
     }
 
     type Investment4 {

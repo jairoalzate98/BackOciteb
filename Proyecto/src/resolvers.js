@@ -10,27 +10,78 @@ import Capacity2 from './models/Capacity2';
 import Capacity2_1 from './models/Capacity2_1';
 import BP3 from './models/BibliographicProduction3';
 
-
 export const resolvers = {
     Query: { 
-        async investmentList(_, {faculty}){
-            return await Investement.aggregate([
-                {$match: { 
-                    FACULTAD: faculty
-                }
-                },
-                {$group: { _id: {
-                    TIPOFINANCIACION: "$TIPOFINANCIACION",
-                    ANIOEJECUCION: "$ANIOEJECUCION"
-                }, total: { 
-                    $sum: 1 
-                }}},
-                {$project: { 
-                    tipo : '$_id.TIPOFINANCIACION', 
-                    anio: '$_id.ANIOEJECUCION',
-                    total: '$total'}
-                }
-            ])
+        async investmentList(_, {faculty, table}){
+            if(table == 'I01'){
+                return await  Investement.aggregate([
+                    {$match: {  
+                        FACULTAD: faculty
+                    }}, 
+                    {$match: {
+                        TABLA: table
+                    }},
+                    {$group: { _id: {
+                        TIPOFINANCIACION: "$TIPOFINANCIACION",
+                        ANIOEJECUCION: "$ANIOEJECUCION"
+                    }, total: { 
+                        $sum: 1 
+                    }}},
+                    {$project: { 
+                        tipo : '$_id.TIPOFINANCIACION', 
+                        anio: '$_id.ANIOEJECUCION',
+                        total: '$total'}
+                    }
+                ])
+            }else if(table == 'I02'){
+                return await  Investement.aggregate([
+                    {$match: {  
+                        FACULTAD: faculty
+                    }}, 
+                    {$match: {
+                        TABLA: table
+                    }},
+                    {$group: { _id: {
+                        ANIOEJECUCION: "$ANIOEJECUCION"
+                    }, AporteEspecie: { 
+                        $sum: '$MONTOESPECIEINTERNO'
+                    }, AporteEfectivo: {
+                        $sum: '$MONTOEFECTIVOINTERNO'
+                    }, AporteExterno: {
+                        $sum: '$MONTOEXTERNO1'
+                    }}},
+                    
+                    {$project: { 
+                        anio: '$_id.ANIOEJECUCION',
+                        AporteEspecie: '$AporteEspecie',
+                        AporteEfectivo: '$AporteEfectivo',
+                        AporteExterno: '$AporteExterno',
+                        totalDinero: {
+                            $add: ['$AporteEspecie', '$AporteEfectivo', '$AporteExterno']
+                        }}
+                    }
+                ])
+            }else if(table == 'I03'){
+                return await  Investement.aggregate([
+                    {$match: {  
+                        FACULTAD: faculty
+                    }}, 
+                    {$match: {
+                        TABLA: table
+                    }},
+                    {$group: { _id: {
+                        ANIOEJECUCION: "$ANIOEJECUCION",
+                        TIPOENTIDAD: "$TIPODEENTIDAD"
+                    }, totalExterno: { 
+                        $sum: "$MONTOEXTERNO1" 
+                    }}},
+                    {$project: { 
+                        tipoEntidad : '$_id.TIPOENTIDAD', 
+                        anio: '$_id.ANIOEJECUCION',
+                        totalEntidadExterna: '$totalExterno'}
+                    }
+                ])
+            }
         },
         async Investment4List(_, {faculty}){
             return await Investement4.aggregate([
