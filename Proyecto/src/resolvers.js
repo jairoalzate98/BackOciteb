@@ -14,7 +14,7 @@ export const resolvers = {
 
     Query: { 
         async investmentList(_, {faculty, table}){
-            var fac = getFaculties(faculty);
+            var fac = getFacultiesInvestment(faculty);
             if(table == 'I01'){
                 return await  Investement.aggregate([
                     {$match: {  
@@ -88,7 +88,7 @@ export const resolvers = {
             }
         },
         async Investment4List(_, {faculty}){
-            var fac = getFaculties2(faculty);
+            var fac = getFacultiesInvestment4(faculty);
             return await Investement4.aggregate([
                 {$match: { 
                     Facultad: fac
@@ -110,9 +110,10 @@ export const resolvers = {
             ])
         },
         async Investment5List(_, {faculty}){
+            var fac = getFacultiesInvestment5(faculty);
             return await Investement5.aggregate([
                 {$match: { 
-                    Facultad: faculty
+                    Facultad: fac
                 }
                 },
                 {$group: { _id: {
@@ -128,9 +129,10 @@ export const resolvers = {
             ])
         },
         async Investment6List(_, {faculty}){
+            var fac = getFacultiesInvestment6(faculty);
             return await Investement6.aggregate([
                 {$match: { 
-                    FACULTAD: faculty
+                    FACULTAD: fac
                 }
                 },
                 {$group: { _id: {
@@ -146,9 +148,10 @@ export const resolvers = {
             ])
         },
         async Formation2List(_, {faculty}){
+            var fac = getFacultiesFormation1(faculty);
             return await Formation2.aggregate([
                 {$match: {
-                    Facultad: faculty
+                    Facultad: fac
                 }
                 },
                 {$group: { _id: {
@@ -166,9 +169,10 @@ export const resolvers = {
             ])
         },
         async Formation1List(_, {faculty}){
+            var fac = getFacultiesFormation1(faculty);
             return await Formation1.aggregate([
                 {$match: {
-                    Facultad: faculty
+                    Facultad: fac
                 }
                 },
                 {$group: { _id: {
@@ -186,9 +190,10 @@ export const resolvers = {
             ])
         },
         async Capacity2List(_, {faculty}){
+            var fac = getFacultiesFormation1(faculty);
             return await Capacity2.aggregate([
                 {$match: {
-                    Facultad: faculty
+                    Facultad: fac
                 }
                 },
                 {$group: { _id: {
@@ -206,9 +211,10 @@ export const resolvers = {
             ])
         },
         async Capacity2_1List(_, {faculty}){
+            var fac = getFacultiesFormation1(faculty);
             return await Capacity2_1.aggregate([
                 {$match: {
-                    Facultad: faculty
+                    Facultad: fac
                 }
                 },
                 {$group: { _id: {
@@ -226,9 +232,10 @@ export const resolvers = {
             ])
         },
         async BibliographicProduction3(_, {faculty}){
+            var fac = getFacultiesBP3(faculty);
             return await BP3.aggregate([
                 {$match: {
-                    FACULTAD2: faculty
+                    FACULTAD2: fac
                 }
                 },
                 {$group: { _id: {
@@ -347,7 +354,7 @@ export const resolvers = {
     }
 };
 
-function getFaculties(faculty){
+function getFacultiesInvestment(faculty){
     switch(faculty){
         case "1":
             return 'CIENCIAS';
@@ -388,7 +395,7 @@ function getFaculties(faculty){
     }
 }
 
-function getFaculties2(faculty){
+function getFacultiesInvestment4(faculty){
     switch(faculty){
         case "1":
             return 'Ciencias';
@@ -422,6 +429,170 @@ function getFaculties2(faculty){
         break;
         case "11":
             return 'Sogamoso';
+        break;
+        default:
+            console.log('Facultad no existente');
+        break;
+    }
+}
+
+function getFacultiesInvestment5(faculty){
+    switch(faculty){
+        case "1":
+            return 'Ciencias';
+        break;
+        case "2":
+            return 'Ciencias Agropecuarias';
+        break;
+        case "3":
+            return 'Ciencias de la Educación';
+        break;
+        case "4":
+            return 'CIENCIAS DE LA SALUD';
+        break;
+        case "5":
+            return 'Ciencias Economicas y administrativas';
+        break;
+        case "6":
+            return 'Derecho y Ciencias Sociales';
+        break;
+        case "7":
+            return 'Estudios a Distancia';
+        break;
+        case "8":
+            return 'INGENIERIA';
+        break;
+        case "9":
+            return 'Chiquinquirá';
+        break;
+        case "10":
+            return 'Duitama';
+        break;
+        case "11":
+            return 'Sogamoso';
+        break;
+        default:
+            console.log('Facultad no existente');
+        break;
+    }
+}
+
+function getFacultiesInvestment6(faculty){
+    switch(faculty){
+        case "1":
+            return 'Ciencias';
+        break;
+        case "2":
+            return 'CIENCIAS AGROPECUARIAS';
+        break;
+        case "3":
+            return 'Ciencias de la Educación';
+        break;
+        case "4":
+            return 'CIENCIAS DE LA SALUD';
+        break;
+        case "5":
+            return 'Ciencias Economicas y administrativas';
+        break;
+        case "6":
+            return 'Derecho y Ciencias Sociales';
+        break;
+        case "7":
+            return 'Estudios a Distancia';
+        break;
+        case "8":
+            return 'INGENIERIA';
+        break;
+        case "9":
+            return 'Chiquinquirá';
+        break;
+        case "10":
+            return 'Duitama';
+        break;
+        case "11":
+            return 'Sogamoso';
+        break;
+        default:
+            console.log('Facultad no existente');
+        break;
+    }
+}
+
+function getFacultiesFormation1(faculty){
+    switch(faculty){
+        case "1":
+            return 'CIENCIAS';
+        break;
+        case "2":
+            return 'CIENCIAS AGROPECUARIAS';
+        break;
+        case "3":
+            return 'CIENCIAS DE LA EDUCACION';
+        break;
+        case "4":
+            return 'CIENCIAS DE LA SALUD';
+        break;
+        case "5":
+            return 'CIENCIAS ECONOMICAS Y ADMINISTRATIVAS';
+        break;
+        case "6":
+            return 'DERECHO Y CIENCIAS  SOCIALES';
+        break;
+        case "7":
+            return 'ESTUDIOS A DISTANCIA';
+        break;
+        case "8":
+            return 'INGENIERIA';
+        break;
+        case "9":
+            return 'SECCIONAL CHIQUINQUIRA';
+        break;
+        case "10":
+            return 'SECCIONAL DUITAMA';
+        break;
+        case "11":
+            return 'SECCIONAL SOGAMOSO';
+        break;
+        default:
+            console.log('Facultad no existente');
+        break;
+    }
+}
+
+function getFacultiesBP3(faculty){
+    switch(faculty){
+        case "1":
+            return 'CIENCIAS';
+        break;
+        case "2":
+            return 'CIENCIAS AGROPECUARIAS';
+        break;
+        case "3":
+            return 'CIENCIAS DE LA EDUCACIÓN';
+        break;
+        case "4":
+            return 'CIENCIAS DE LA SALUD';
+        break;
+        case "5":
+            return 'CIENCIAS ECONÓMICAS Y ADMINISTRATIVAS';
+        break;
+        case "6":
+            return 'DERECHO Y CIENCIAS SOCIALES';
+        break;
+        case "7":
+            return 'ESTUDIOS A DISTANCIA';
+        break;
+        case "8":
+            return 'INGENIERIA';
+        break;
+        case "9":
+            return 'SECCIONAL CHIQUINQUIRA';
+        break;
+        case "10":
+            return 'SECCIONAL DUITAMA';
+        break;
+        case "11":
+            return 'SECCIONAL SOGAMOSO';
         break;
         default:
             console.log('Facultad no existente');
