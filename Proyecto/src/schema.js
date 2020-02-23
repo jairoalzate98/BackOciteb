@@ -10,8 +10,8 @@ const typeDef = gql`
         Investment6List(faculty: String): [Investment6]
         Formation1List(faculty: String): [Formation1]
         Formation2List(faculty: String): [Formation2]
-        Formation3List: [Formation3]
-        Capacity1List: [Capacity1]
+        Formation3List(faculty: String): [Formation3]
+        Capacity1List(faculty: String): [Capacity1]
         Capacity2List(faculty: String): [Capacity2]
         Capacity2_1List(faculty: String): [Capacity2_1]
         BibliographicProduction3(faculty: String): [BibliographicProduction3]
@@ -64,22 +64,18 @@ const typeDef = gql`
     }
 
     type Formation3 {
-        ANIO: Int
-        NoEstsemilleros: Int
-        FACULTAD: String
-        TABLA: String
+        Anio: Int
+        NoEstSemilleros: Int
     }
 
     type Capacity1 {
-        ANIO: Int
-        A1: String
-        A: String
-        B: String
-        C: String
-        D: String
-        R: String
-        FACULTAD: String
-        TABLA: String
+        Anio: Int
+        A1: Int
+        A: Int
+        B: Int
+        C: Int
+        D: Int
+        R: Int
     }
 
     type Capacity2 {
@@ -111,6 +107,17 @@ const typeDef = gql`
         createCapacity2(capacity2Info: [Capacity2Input]): [Capacity2]
         createCapacity2_1(capacity2_1Info: [Capacity2_1Input]): [Capacity2_1]
         createBP3(BibliographicProduction3Info: [BibliographicProduction3Input]): [BibliographicProduction3]
+    }
+
+    input Capacity1Input {
+        Anio: Int
+        A1: Int
+        A: Int
+        B: Int
+        C: Int
+        D: Int
+        R: Int
+        Facultad: String
     }
     
     input  BibliographicProduction3Input {   
@@ -159,23 +166,10 @@ const typeDef = gql`
         TABLA: String
     }
 
-    input Capacity1Input {
-        ANIO: Int
-        A1: String
-        A: String
-        B: String
-        C: String
-        D: String
-        R: String
-        FACULTAD: String
-        TABLA: String
-    }
-
     input Formation3Input {
-        ANIO: Int
-        NoEstsemilleros: Int
+        Anio: Int
+        NoEstSemilleros: Int
         FACULTAD: String
-        TABLA: String
     }
 
     input Formation2Input {

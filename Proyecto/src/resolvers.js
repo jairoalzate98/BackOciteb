@@ -147,6 +147,19 @@ export const resolvers = {
                 }
             ])
         },
+        async Formation3List(_, {faculty}){
+            var fac = getFacultiesInvestment(faculty);
+            return await Formation3.aggregate([
+                {$match: {
+                    FACULTAD: fac
+                }
+                },
+                {$project: {
+                    Anio: '$Anio',
+                    NoEstSemilleros: '$NoEstSemilleros'
+                }}
+            ])
+        },
         async Formation2List(_, {faculty}){
             var fac = getFacultiesFormation1(faculty);
             return await Formation2.aggregate([
@@ -186,6 +199,24 @@ export const resolvers = {
                     Anio: '$_id.Anio',
                     Programa: '$_id.Programa',
                     total:  '$total'
+                }}
+            ])
+        },
+        async Capacity1List(_, {faculty}){
+            var fac = getFacultiesInvestment(faculty);
+            return await Capacity1.aggregate([
+                {$match: {
+                    Facultad: fac
+                }
+                },
+                {$project: {
+                    Anio: '$Anio',
+                    A1: '$A1',
+                    A: '$A',
+                    B: '$B',
+                    C: '$C',
+                    D: '$D',
+                    R: '$R'
                 }}
             ])
         },

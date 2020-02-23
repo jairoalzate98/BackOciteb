@@ -1,15 +1,14 @@
 import { Schema, model } from "mongoose";
 
 const Capacity1Schema = new Schema({
-    ANIO: Number,
-    A1: String,
-    A: String,
-    B: String,
-    C: String,
-    D: String,
-    R: String,
-    FACULTAD: String,
-    TABLA: String
+    Anio: Number,
+    A1: Number,
+    A: Number,
+    B: Number,
+    C: Number,
+    D: Number,
+    R: Number,
+    Facultad: String
 }, {
     collection: 'capacity1'
 });

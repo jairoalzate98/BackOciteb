@@ -1,10 +1,9 @@
 import { Schema, model } from "mongoose";
 
 const Formation3Schema = new Schema({
-    ANIO: Number,
-    NoEstsemilleros: Number,
-    FACULTAD: String,
-    TABLA: String
+    Anio: Number,
+    NoEstSemilleros: Number,
+    FACULTAD: String
 }, {
     collection: 'formation3'
 });
