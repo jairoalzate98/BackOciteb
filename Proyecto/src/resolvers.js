@@ -33,7 +33,8 @@ export const resolvers = {
                         tipo : '$_id.TIPOFINANCIACION', 
                         anio: '$_id.ANIOEJECUCION',
                         total: '$total'}
-                    }
+                    },
+                    { $sort: { anio: 1 } }
                 ])
             }else if(table == 'I02'){
                 return await  Investement.aggregate([
@@ -61,7 +62,8 @@ export const resolvers = {
                         totalDinero: {
                             $add: ['$AporteEspecie', '$AporteEfectivo', '$AporteExterno']
                         }}
-                    }
+                    },
+                    { $sort: { anio: 1 } }
                 ])
 
             }else if(table == 'I03'){
@@ -83,7 +85,8 @@ export const resolvers = {
                         tipoEntidad : '$_id.TIPOENTIDAD', 
                         anio: '$_id.ANIOEJECUCION',
                         totalEntidadExterna: '$totalExterno'}
-                    }
+                    },
+                    { $sort: { anio: 1 } }
                 ])
             }
         },
@@ -125,7 +128,8 @@ export const resolvers = {
                 {$project: { 
                     Anio: '$_id.Anio',
                     total: '$total'}
-                }
+                },
+                { $sort: { Anio: 1 } }
             ])
         },
         async Investment6List(_, {faculty}){
@@ -144,7 +148,8 @@ export const resolvers = {
                 {$project: { 
                     Anio: '$_id.Anio',
                     total: '$total'}
-                }
+                },
+                { $sort: { Anio: 1 } }
             ])
         },
         async Formation3List(_, {faculty}){
@@ -157,7 +162,8 @@ export const resolvers = {
                 {$project: {
                     Anio: '$Anio',
                     NoEstSemilleros: '$NoEstSemilleros'
-                }}
+                }},
+                { $sort: { Anio: 1 } }
             ])
         },
         async Formation2List(_, {faculty}){
@@ -178,7 +184,8 @@ export const resolvers = {
                     Anio: '$_id.Anio',
                     Programa: '$_id.Programa',
                     total:  '$total'
-                }}
+                }},
+                { $sort: { Anio: 1 } }
             ])
         },
         async Formation1List(_, {faculty}){
@@ -199,7 +206,8 @@ export const resolvers = {
                     Anio: '$_id.Anio',
                     Programa: '$_id.Programa',
                     total:  '$total'
-                }}
+                }},
+                { $sort: { Anio: 1 } }
             ])
         },
         async Capacity1List(_, {faculty}){
@@ -217,7 +225,8 @@ export const resolvers = {
                     C: '$C',
                     D: '$D',
                     R: '$R'
-                }}
+                }},
+                { $sort: { Anio: 1 } }
             ])
         },
         async Capacity2List(_, {faculty}){
@@ -238,7 +247,8 @@ export const resolvers = {
                     Anio: '$_id.Anio',
                     Tipo: '$_id.Tipo',
                     total:  '$total'
-                }}
+                }},
+                { $sort: { Anio: 1 } }
             ])
         },
         async Capacity2_1List(_, {faculty}){
@@ -259,7 +269,8 @@ export const resolvers = {
                     Anio: '$_id.Anio',
                     Tipo: '$_id.Tipo',
                     total:  '$total'
-                }}
+                }},
+                { $sort: { Anio: 1 } }
             ])
         },
         async BibliographicProduction3(_, {faculty}){
@@ -278,7 +289,8 @@ export const resolvers = {
                 {$project: {
                     Anio: '$_id.Anio',
                     total:  '$total'
-                }}
+                }},
+                { $sort: { Anio: 1 } }
             ])
         }
     },
